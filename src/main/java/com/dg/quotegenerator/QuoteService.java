@@ -46,8 +46,9 @@ public class QuoteService {
             }
 
             currentTries++;
-            System.out.println("No quote received from API on attempt: " + currentTries + ". Please wait a moment for another attempt");
+
             if (currentTries < maxTries) {
+                System.out.println("No quote received from API on attempt: " + currentTries + ". Please wait a moment for another attempt");
                 long delay = currentTries * 1000L;
                 executorService.schedule(this::getQuote, delay, TimeUnit.MILLISECONDS);
             }

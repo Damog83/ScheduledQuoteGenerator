@@ -87,10 +87,6 @@ class QuoteGeneratorApplicationTests {
                 Assertions.assertTrue(consoleOutput.contains("No quote received from API on attempt: 2. Please wait a moment for another attempt"))
         );
 
-        Awaitility.await().atMost(Duration.ofSeconds(10)).untilAsserted(() ->
-                Assertions.assertTrue(consoleOutput.contains("No quote received from API on attempt: 3. Please wait a moment for another attempt"))
-        );
-
         Awaitility.await().atMost(Duration.ofSeconds(5)).untilAsserted(() ->
                 Assertions.assertTrue(consoleOutput.contains("Sorry failed after 3 attempts."))
         );
@@ -119,15 +115,8 @@ class QuoteGeneratorApplicationTests {
                 Assertions.assertTrue(consoleOutput.contains("No quote received from API on attempt: 2. Please wait a moment for another attempt"))
         );
 
-        Awaitility.await().atMost(Duration.ofSeconds(10)).untilAsserted(() ->
-                Assertions.assertTrue(consoleOutput.contains("No quote received from API on attempt: 3. Please wait a moment for another attempt"))
-        );
-
         Awaitility.await().atMost(Duration.ofSeconds(5)).untilAsserted(() ->
                 Assertions.assertTrue(consoleOutput.contains("Sorry failed after 3 attempts."))
         );
    }
-
-
-
 }
